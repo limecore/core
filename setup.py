@@ -17,7 +17,7 @@ tags = list(filter(lambda t: t.commit == commit, repository.tags))
 if len(tags) == 1:
     tag = tags[0]
 elif len(tags) > 1:
-    raise NotImplementedError('many tags')
+    raise NotImplementedError("many tags")
 else:
     tag = None
 
@@ -37,8 +37,12 @@ with open("requirements.txt") as f:
 
 packages = []
 # Discover the Packages
-for directory, subdirectories, files in os.walk('src'):
-    subdirectories[:] = [d for d in subdirectories if d not in ['__pycache__'] and not d.endswith('.egg-info')]
+for directory, subdirectories, files in os.walk("src"):
+    subdirectories[:] = [
+        d
+        for d in subdirectories
+        if d not in ["__pycache__"] and not d.endswith(".egg-info")
+    ]
 
     print(directory, directory.split(os.path.sep))
     if any(files):
