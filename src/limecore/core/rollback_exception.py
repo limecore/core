@@ -1,9 +1,6 @@
 from enum import Enum
 
 
-from .rollback_strategy import RollbackStrategy
-
-
 class RollbackStrategy(Enum):
     RETRY_NOW = 1
     RETRY_LATER = 2
